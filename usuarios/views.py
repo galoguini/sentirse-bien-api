@@ -25,3 +25,17 @@ class LogoutView(APIView):
         except Token.DoesNotExist:
             return Response(status=status.HTTP_400_BAD_REQUEST)
 
+class GetUserInfoView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        user = request.user
+        data = {
+            'username': user.username,
+            'email': user.email,
+            'first_name': user.first_name,
+            'last_name': user.last_name,
+            'rol': user.rol,
+            'telefono': user.telefono
+        }
+        return Response(data, status=status.HTTP_200_OK)
