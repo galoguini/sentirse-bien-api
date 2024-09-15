@@ -6,6 +6,7 @@ from usuarios.models import Usuario
 class Turno(models.Model):
     fecha = models.DateField()
     hora = models.TimeField()
+    servicio = models.CharField(max_length=100)
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):

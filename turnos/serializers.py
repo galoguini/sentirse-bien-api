@@ -4,4 +4,6 @@ from .models import Turno
 class TurnoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Turno
-        fields = ['id', 'fecha', 'hora', 'usuario']
+        fields = ['fecha', 'hora', 'servicio', 'usuario']
+        read_only_fields = ['usuario']
+

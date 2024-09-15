@@ -12,7 +12,6 @@ class RegisterView(CreateAPIView):
     serializer_class = RegisterSerializer
     permission_classes = [AllowAny]
 
-
 class LogoutView(APIView):
     permission_classes = [IsAuthenticated]
 
@@ -25,7 +24,6 @@ class LogoutView(APIView):
             return Response(status=status.HTTP_400_BAD_REQUEST)
 
 class GetUserInfoView(APIView):
-    permission_classes = [IsAuthenticated]
 
     def get(self, request):
         user = request.user
