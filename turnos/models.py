@@ -1,7 +1,6 @@
 from django.db import models
 from usuarios.models import Usuario
-
-# Create your models here.
+from pagos.models import Pago
 
 class Turno(models.Model):
     fecha = models.DateField()
@@ -10,4 +9,8 @@ class Turno(models.Model):
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
-        return self.fecha
+        return str(self.fecha)
+
+    @property
+    def pagado(self):
+        return Pago.objects.filter(turno=self).exists()
