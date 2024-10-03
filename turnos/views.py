@@ -9,11 +9,10 @@ class TurnoListView(generics.ListAPIView):
     def get_queryset(self):
         usuario = self.request.user  
 
-        if usuario.rol == 1:  
+        if usuario.rol >= 1:  
             return Turno.objects.all()  
         else:  
             return Turno.objects.filter(usuario=usuario)
-
 
 class TurnoCreateView(generics.CreateAPIView):
     queryset = Turno.objects.all()
