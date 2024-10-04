@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'consultas',
     'reseñas',
     'turnos',
+    'pagos',
 ]
 
 MIDDLEWARE = [

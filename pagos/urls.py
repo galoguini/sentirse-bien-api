@@ -1,8 +1,7 @@
 from django.urls import path
-from .views import ProcesarPagoView
+from .views import ProcesarPagoView, PagoListView
 
 urlpatterns = [
     path('procesar/', ProcesarPagoView.as_view()),
-    # path('nueva_consulta/', ConsultaCreateView.as_view()),
-    # path('<int:pk>/respuesta/', ConsultaUpdateView.as_view()),
+    path('pagos/', PagoListView.as_view()),
 ]
