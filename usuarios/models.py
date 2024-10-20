@@ -4,6 +4,8 @@ from django.contrib.auth.models import AbstractUser
 # el username es el email
 # rol 0: usuario
 # rol 1: staff
+# rol 2: secretaria
+# rol 3: administrador (no es admin django)
 
 class Usuario(AbstractUser):
     telefono = models.CharField(max_length=20)
