@@ -4,5 +4,5 @@ from .models import Pago
 class PagoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Pago
-        fields = ['usuario', 'turno', 'monto', 'nroPago']
-        read_only_fields = ['usuario', 'nroPago'] 
+        fields = ['usuario', 'turno', 'monto', 'nroPago', 'fecha_pago']
+        read_only_fields = ['usuario', 'nroPago']

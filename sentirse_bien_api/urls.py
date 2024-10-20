@@ -24,4 +24,5 @@ urlpatterns = [
     path('consultas/', include('consultas.urls')),
     path('reseñas/', include('reseñas.urls')),
     path('turnos/', include('turnos.urls')),
+    path('pagos/', include('pagos.urls')),
 ]

@@ -3,5 +3,5 @@ from .views import ProcesarPagoView, PagoListView
 
 urlpatterns = [
     path('procesar/', ProcesarPagoView.as_view()),
-    path('pagos/', PagoListView.as_view()),
+    path('lista_pagos/', PagoListView.as_view()),
 ]
