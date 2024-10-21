@@ -7,7 +7,8 @@ class Pago(models.Model):
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, null=False, blank=False)
     turno = models.ForeignKey('turnos.Turno', on_delete=models.CASCADE, null=False, blank=False)
     nroPago = models.CharField(max_length=15, unique=True, editable=False)
-    fecha_pago = models.DateField(auto_now_add=True)  # Agrega este campo
+    fecha_pago = models.DateField(auto_now_add=True)
+    monto = models.DecimalField(max_digits=10, decimal_places=2)
 
     def save(self, *args, **kwargs):
         if not self.nroPago:
