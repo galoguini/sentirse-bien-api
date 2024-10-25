@@ -14,7 +14,8 @@ class Pago(models.Model):
     nroPago = models.CharField(max_length=15, unique=True, editable=False)
     fecha_pago = models.DateField(auto_now_add=True)
     monto = models.DecimalField(max_digits=10, decimal_places=2)
-    
+    tipo = models.IntegerField(default=0)
+
     def save(self, *args, **kwargs):
         if not self.nroPago:
             self.nroPago = ''.join(random.choices(string.ascii_uppercase + string.digits, k=15))
