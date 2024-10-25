@@ -4,12 +4,13 @@ from pagos.models import Pago
 
 class Turno(models.Model):
     fecha = models.DateField()
-    hora = models.TimeField()
+    hora = models.CharField(max_length=5)
     servicio = models.CharField(max_length=100)
-    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, null=True, blank=True)
+    cliente = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name='turnos_como_cliente', null=True, blank=True)
+    profesional = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name='turnos_como_profesional', null=True, blank=True)
 
     def __str__(self):
-        return str(self.fecha)
+        return f'{self.fecha} - {self.servicio}'
 
     @property
     def pagado(self):
