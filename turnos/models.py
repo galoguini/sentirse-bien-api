@@ -1,6 +1,5 @@
 from django.db import models
 from usuarios.models import Usuario
-from pagos.models import Pago
 
 class Turno(models.Model):
     fecha = models.DateField()

@@ -3,7 +3,7 @@ from django.contrib.auth.models import AbstractUser
 
 # el username es el email
 # rol 0: usuario
-# rol 1: staff
+# rol 1: profesional
 # rol 2: secretaria
 # rol 3: administrador (no es admin django)
 
