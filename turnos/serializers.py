@@ -6,4 +6,4 @@ class TurnoSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Turno
-        fields = ['id', 'fecha', 'hora', 'servicio', 'usuario', 'pagado'] 
+        fields = ['id', 'fecha', 'hora', 'servicio', 'profesional', 'pagado', 'cliente'] 
