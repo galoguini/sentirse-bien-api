@@ -8,12 +8,13 @@ import random
 class TurnoListView(generics.ListAPIView):
     serializer_class = TurnoSerializer
     permission_classes = [IsAuthenticated]  
+
     def get_queryset(self):
         usuario = self.request.user  
         if usuario.rol >= 1:  
             return Turno.objects.all()  
         else:  
-            return Turno.objects.filter(usuario=usuario)
+            return Turno.objects.filter(cliente=usuario)
 
 class TurnoCreateView(generics.CreateAPIView):
     queryset = Turno.objects.all()
