@@ -19,5 +19,9 @@ class Pago(models.Model):
     def save(self, *args, **kwargs):
         if not self.nroPago:
             self.nroPago = ''.join(random.choices(string.ascii_uppercase + string.digits, k=15))
-        super().save(*args, **kwargs)
 
+        super().save(*args, **kwargs)
+        
+        if self.turno.pagado is False:
+            self.turno.pagado = True
+            self.turno.save()
